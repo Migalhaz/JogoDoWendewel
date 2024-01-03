@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32ca064e09d35e43ac5a5febeb0f9ab, type: 3}
   m_Name: ExplosionWeapon
   m_EditorClassIdentifier: 
-  m_powerUpName: "Explos\xE3o"
-  m_powerUpDescription: "Cria uma explos\xE3o"
+  m_powerUpName: Bomba do vazio
+  m_powerUpDescription: "Cria uma explos\xE3o em um ciclo de alguns segundos, causando
+    dano \xE0 todos os inimigos em um raio que aumenta a cada n\xEDvel."
   m_powerUpIcon: {fileID: 21300000, guid: 980e7bba1466eec4a8774866e9151737, type: 3}

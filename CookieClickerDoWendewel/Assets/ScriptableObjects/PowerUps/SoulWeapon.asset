@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32ca064e09d35e43ac5a5febeb0f9ab, type: 3}
   m_Name: SoulWeapon
   m_EditorClassIdentifier: 
-  m_powerUpName: Tiro
-  m_powerUpDescription: Aumenta a quantidade de tiros
+  m_powerUpName: "Proj\xE9til fantasmag\xF3rico"
+  m_powerUpDescription: "Aitra um proj\xE9til de almas s\xF3lidas na dire\xE7\xE3o
+    do inimigo mais pr\xF3ximo."
   m_powerUpIcon: {fileID: 21300000, guid: f74d323c00a2b9e41b243ed802d4cb8b, type: 3}

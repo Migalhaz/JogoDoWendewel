@@ -51,7 +51,7 @@ public class GameManager : MigalhaSystem.Singleton<GameManager>
     public void CloseGame()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
     public void SwitchScene(string sceneName)
     {

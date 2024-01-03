@@ -21,6 +21,7 @@ public class LevelUpCanvas : MonoBehaviour
 
     [Header("Text")]
     [SerializeField] TextMeshProUGUI m_description;
+    [SerializeField] string m_hpUpDescription;
     public TextMeshProUGUI m_Description => m_description;
 
     private void Start()
@@ -109,7 +110,7 @@ public class LevelUpCanvas : MonoBehaviour
 
     public void SetIncreaseHpChoice()
     {
-        m_description.text = "Aumenta a vida máxima!";
+        m_description.text = m_hpUpDescription;
         m_currentChoice = null;
         ActiveConfirmButton();
     }

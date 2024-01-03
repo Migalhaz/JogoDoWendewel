@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32ca064e09d35e43ac5a5febeb0f9ab, type: 3}
   m_Name: SatelliteWeapon
   m_EditorClassIdentifier: 
-  m_powerUpName: Espinhos
-  m_powerUpDescription: Orbita o player
+  m_powerUpName: Espinho protetor
+  m_powerUpDescription: Cria um escudo de espinhos que te orbita matando qualquer
+    inimigo instantaneamente.
   m_powerUpIcon: {fileID: 21300000, guid: fd36ff26aa1959446b213719ab54dbc8, type: 3}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32ca064e09d35e43ac5a5febeb0f9ab, type: 3}
   m_Name: HpPowerUp
   m_EditorClassIdentifier: 
-  m_powerUpName: Hp
-  m_powerUpDescription: Enquanto parado recupera HP
+  m_powerUpName: "Cora\xE7\xE3o divino"
+  m_powerUpDescription: "Aumenta a porcentagem de recupera\xE7\xE3o de vida enquanto
+    voc\xEA estiver parado. "
   m_powerUpIcon: {fileID: 21300000, guid: 532fc524bc80a1544a16861dc0695400, type: 3}

@@ -2708,7 +2708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &323366881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2822,6 +2822,7 @@ MonoBehaviour:
   m_hpUpButton: {fileID: 49436089}
   m_confirmButton: {fileID: 417976937}
   m_description: {fileID: 962783874}
+  m_hpUpDescription: Respire, sua vida aumenta e se recupera.
 --- !u!1 &352870301
 GameObject:
   m_ObjectHideFlags: 0
@@ -15831,7 +15832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2067633120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15975,7 +15976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HP UP
+  m_text: Vitalidade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
