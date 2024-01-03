@@ -14,6 +14,7 @@ public class ExplosionWeapon : PowerUps
     [SerializeField] DamageSettings m_damageSettings;
     [SerializeField] CircleTrigger2D m_circleTrigger;
     [SerializeField] UnityEvent m_onExplode;
+    [SerializeField] AudioSourceController m_audio;
     
     private void OnEnable()
     {
@@ -44,6 +45,7 @@ public class ExplosionWeapon : PowerUps
     void Explosion()
     {
         m_onExplode?.Invoke();
+        m_audio.Play();
         m_boomAnimation.Play(m_boomAnimator);
         bool isIn = m_circleTrigger.InTrigger(transform, out List<Collider2D> collider);
         if (!isIn) return;

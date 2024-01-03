@@ -139,3 +139,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   m_rotateSpeed: 80
+  m_audio:
+    m_audio: {fileID: 8300000, guid: 1d3b0112fead0904e8a5ca6b392dc6f1, type: 3}
+    m_volume: 1

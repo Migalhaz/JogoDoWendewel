@@ -15,6 +15,7 @@ public class XpPoint : MonoBehaviour, ISpawnable
     [SerializeField] Timer m_lifeTime;
     PoolManager m_poolManager;
     [SerializeField, Min(0)] float m_rotateSpeed;
+    [SerializeField] AudioClipController m_audio;
     void Start()
     {
         m_xpManager = PlayerManager.Instance.m_XpManager;
@@ -53,6 +54,7 @@ public class XpPoint : MonoBehaviour, ISpawnable
         if (hit)
         {
             m_xpManager.AddXp(m_drop.m_currentXpDrop);
+            m_audio.Play(transform.position);
             ReturnPool();
         }
     }

@@ -12,6 +12,7 @@ public class SoulBullet : PlayerBullet, ISpawnable
     PoolManager m_poolManager;
     [SerializeField] MoveInDirection m_moveSystem;
     [SerializeField] PoolDataScriptableObject m_soulPool;
+    [SerializeField] AudioClipController m_spawnBulletAudio;
 
     void OnEnable()
     {
@@ -58,7 +59,12 @@ public class SoulBullet : PlayerBullet, ISpawnable
             BulletDeath();
             return;
         }
+        m_spawnBulletAudio.Play(transform.position);
         Vector3 direction = (target.position - transform.position).normalized;
         m_moveSystem.SetDirection(direction);
+    }
+    protected override void BulletCollision()
+    {
+        m_onBulletCollision?.Invoke();
     }
 }

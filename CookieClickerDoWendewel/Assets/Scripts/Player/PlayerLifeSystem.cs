@@ -25,6 +25,9 @@ public class PlayerLifeSystem : BasicLifeSystem, IHeal
 
     [Header("Events")]
     [SerializeField] PlayerLifeSystemEvents m_events;
+
+    [Header("SFX")]
+    [SerializeField] PlayerHealthAudio m_audio;
     public override LifeSystemEvents Events()
     {
         return m_events;
@@ -46,9 +49,16 @@ public class PlayerLifeSystem : BasicLifeSystem, IHeal
         m_canTakeDamage = true;
     }
 
+    public override void Death()
+    {
+        m_audio.PlayDeathSFX();
+        base.Death();
+    }
+
     public override void Damage(float damage)
     {
         if (!m_canTakeDamage) return;
+        m_audio.PlayDamageSFX();
         StartCoroutine(IFrames());
         base.Damage(damage);
     }
@@ -59,16 +69,25 @@ public class PlayerLifeSystem : BasicLifeSystem, IHeal
         m_fillImage.color = Color.Lerp(m_lowHpColor, m_fullHpColor, m_HpPercentage);
     }
 
+    public void HealByPercentage(float percentage)
+    {
+        Heal(m_HpRange.m_MaxValue * percentage * 0.01f);
+    }
+
     public void Heal(float heal)
     {
         if (!IsAlive()) return;
         PlayerLifeSystemEvents playerLifeSystemEvents = (PlayerLifeSystemEvents) Events();
-
+        
 
         m_currentHp += heal;
         if (m_currentHp >= m_hpRange.m_MaxValue)
         {
             m_currentHp = m_hpRange.m_MaxValue;
+        }
+        else
+        {
+            m_audio.PlayHealSFX();
         }
         playerLifeSystemEvents.OnHpChange?.Invoke();
         playerLifeSystemEvents.OnHeal?.Invoke();

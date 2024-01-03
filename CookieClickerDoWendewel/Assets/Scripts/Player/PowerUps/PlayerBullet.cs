@@ -11,6 +11,7 @@ public class PlayerBullet : MonoBehaviour
     [SerializeField] CircleTrigger2D m_circleTrigger;
     [SerializeField] DamageSettings m_damageSettings;
     [SerializeField] protected UnityEvent m_onBulletCollision;
+    [SerializeField] AudioSourceController m_collisionAudio;
     protected virtual void Update()
     {
         ColliderCheck();
@@ -31,6 +32,7 @@ public class PlayerBullet : MonoBehaviour
     protected virtual void BulletCollision()
     {
         m_onBulletCollision?.Invoke();
+        m_collisionAudio.Play();
     }
     private void OnDrawGizmos()
     {

@@ -133,6 +133,8 @@ MonoBehaviour:
   m_onBulletCollision:
     m_PersistentCalls:
       m_Calls: []
+  m_collisionAudio:
+    m_audio: {fileID: 0}
   m_lifeTime:
     m_Countdown: 1
     m_startTimer:
@@ -145,3 +147,6 @@ MonoBehaviour:
     m_transform: {fileID: 936057555664021204}
     m_moveSpeed: 10
   m_soulPool: {fileID: 11400000, guid: 7d061686a3c651443a21e935e8a97e0c, type: 2}
+  m_spawnBulletAudio:
+    m_audio: {fileID: 8300000, guid: 79ff270dd3aac124c97655738173a5ab, type: 3}
+    m_volume: 1

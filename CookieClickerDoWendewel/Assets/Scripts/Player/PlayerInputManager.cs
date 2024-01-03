@@ -7,6 +7,7 @@ public class PlayerInputManager : MonoBehaviour
     GameManager m_gameManager;
     Vector3 m_moveInputDirection;
     [SerializeField] KeyCode m_pauseKey = KeyCode.Escape;
+    [SerializeField] KeyCode m_resetKey = KeyCode.R;
     public Vector3 m_MoveInputDirection => m_moveInputDirection;
     private void Start()
     {
@@ -15,9 +16,8 @@ public class PlayerInputManager : MonoBehaviour
     void Update()
     {
         PauseInput();
-        if (m_gameManager.m_Paused) return;
-
-        
+        RestartSceneInput();
+        if (m_gameManager.m_Paused) return;        
         MoveInput();
     }
 
@@ -36,7 +36,13 @@ public class PlayerInputManager : MonoBehaviour
             return true;
         }
     }
-
+    void RestartSceneInput()
+    {
+        if (Input.GetKeyDown(m_resetKey))
+        {
+            m_gameManager.RestartScene();
+        }
+    }
     void MoveInput()
     {
         float x = Input.GetAxisRaw("Horizontal");

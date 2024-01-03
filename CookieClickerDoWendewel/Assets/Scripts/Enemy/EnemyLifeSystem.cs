@@ -21,6 +21,9 @@ public class EnemyLifeSystem : BasicLifeSystem, ISpawnable
         }
     }
     [SerializeField] LifeSystemEvents m_events;
+
+    [Header("SFX")]
+    [SerializeField] EnemyAudio m_enemyAudio;
     public override LifeSystemEvents Events()
     {
         return m_events;
@@ -34,6 +37,7 @@ public class EnemyLifeSystem : BasicLifeSystem, ISpawnable
     public override void Death()
     {
         base.Death();
+        m_enemyAudio.PlayDeathSFX(transform.position);
         m_enemyController.PickDrop();
         ReturnToPool();
     }
@@ -42,5 +46,6 @@ public class EnemyLifeSystem : BasicLifeSystem, ISpawnable
     {
         m_alive = true;
         m_currentHp = m_startHp;
+        m_enemyAudio.PlaySpawnSFX();
     }
 }

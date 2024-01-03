@@ -40,7 +40,10 @@ public class LevelUpCanvas : MonoBehaviour
         switch (availablePowerUps.Count)
         {
             case 0:
-                SetupButtons(availablePowerUps, false, false, false);
+                //SetupButtons(availablePowerUps, false, false, false);
+                CheckPowerUpsAvailable();
+                SetIncreaseHpChoice();
+                ApplyEffect();
                 break;
             case 1:
                 SetupButtons(availablePowerUps, false, true, false);

@@ -35,7 +35,7 @@ namespace MigalhaSystem
 
             if (m_DDOL)
             {
-                DontDestroyOnLoad(instance.gameObject);
+                DontDestroyOnLoad(Instance.gameObject);
             }
         }
     }

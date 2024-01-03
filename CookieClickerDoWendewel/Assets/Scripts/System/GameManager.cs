@@ -151,6 +151,11 @@ public class GameManager : MigalhaSystem.Singleton<GameManager>
         }
         return canvas.m_Active;
     }
+
+    public void SwitchAudio()
+    {
+        AudioManager.Instance.SwitchAudioActive();
+    }
 }
 
 
