@@ -156,6 +156,11 @@ public class GameManager : MigalhaSystem.Singleton<GameManager>
     {
         AudioManager.Instance.SwitchAudioActive();
     }
+
+    public void PlayButtonAudio()
+    {
+        AudioManager.Instance.PlayButtonSound();
+    }
 }
 
 

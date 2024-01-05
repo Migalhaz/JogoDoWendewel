@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_poolTag: SmallXpPoint
   m_prefab: {fileID: 711782165775103580, guid: bbf58eb69758f3f47a6c403af50d0ac7, type: 3}
-  m_poolSize: 10
-  m_expandablePool: 1
+  m_poolSize: 20
+  m_expandablePool: 0
   m_destroyExtraObjectsAfterUse: 0

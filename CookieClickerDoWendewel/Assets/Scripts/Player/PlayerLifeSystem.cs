@@ -76,21 +76,25 @@ public class PlayerLifeSystem : BasicLifeSystem, IHeal
 
     public void Heal(float heal)
     {
-        if (!IsAlive()) return;
+        if (!CanHeal()) return;
         PlayerLifeSystemEvents playerLifeSystemEvents = (PlayerLifeSystemEvents) Events();
-        
 
+        m_audio.PlayHealSFX();
         m_currentHp += heal;
-        if (m_currentHp >= m_hpRange.m_MaxValue)
-        {
-            m_currentHp = m_hpRange.m_MaxValue;
-        }
-        else
-        {
-            m_audio.PlayHealSFX();
-        }
+        CanHeal();
         playerLifeSystemEvents.OnHpChange?.Invoke();
         playerLifeSystemEvents.OnHeal?.Invoke();
+
+        bool CanHeal()
+        {
+            if (!IsAlive()) return false;
+            if (m_currentHp >= m_hpRange.m_MaxValue)
+            {
+                m_currentHp = m_hpRange.m_MaxValue;
+                return false;
+            }
+            return true;
+        }
     }
 
     IEnumerator IFrames()

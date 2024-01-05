@@ -5,13 +5,8 @@ using MigalhaSystem;
 public class AudioManager : Singleton<AudioManager>
 {
     public bool m_AudioActive { get; private set; } = true;
-    AudioSource m_music;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        TryGetComponent(out m_music);
-    }
+    [SerializeField] AudioSource m_music;
+    [SerializeField] AudioSource m_buttonSound;
 
     public bool CanPlay()
     {
@@ -45,6 +40,11 @@ public class AudioManager : Singleton<AudioManager>
     {
         if (!CanPlay()) return;
         AudioSource.PlayClipAtPoint(audioClip, pos, volume);
+    }
+
+    public void PlayButtonSound()
+    {
+        PlayAudioSource(m_buttonSound);
     }
 
 }
