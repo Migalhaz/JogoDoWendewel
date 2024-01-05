@@ -5,6 +5,13 @@ using MigalhaSystem;
 public class AudioManager : Singleton<AudioManager>
 {
     public bool m_AudioActive { get; private set; } = true;
+    AudioSource m_music;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        TryGetComponent(out m_music);
+    }
 
     public bool CanPlay()
     {
@@ -15,9 +22,16 @@ public class AudioManager : Singleton<AudioManager>
     {
         SetAudioActive(!m_AudioActive);
     }
-
     public void SetAudioActive(bool active)
     {
+        if (active)
+        {
+            m_music.Play();
+        }
+        else
+        {
+            m_music.Stop();
+        }
         m_AudioActive = active;
     }
 
